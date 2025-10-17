@@ -1,26 +1,50 @@
+/* ===== Base Layer ===== */
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Reference the built-in layers (v4 syntax) */
+@reference "tailwindcss" layer(base) as base;
+@reference "tailwindcss" layer(utilities) as utils;
+@reference "tailwindcss" layer(components) as components;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ===== Base Layer ===== */
+@layer base {
+  body {
+    @apply utils.bg-gray-50 utils.text-gray-900;
+  }
 }
+/* ===== Components Layer ===== */
+@layer components {
+  .comment-indent {
+    @apply ml-4 md:ml-8 pl-4 md:pl-6 border-l-2 border-gray-200;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .btn-primary {
+    @apply utils.bg-primary-600 utils.hover:bg-primary-700 utils.text-white utils.font-medium utils.px-4 utils.py-2 utils.rounded-lg utils.transition-colors utils.duration-200;
+  }
+
+  .btn-secondary {
+    @apply utils.bg-gray-200 utils.hover:bg-gray-300 utils.text-gray-700 utils.font-medium utils.px-4 utils.py-2 utils.rounded-lg utils.transition-colors utils.duration-200;
+  }
+
+  .input-field {
+    @apply utils.w-full utils.px-4 utils.py-2 utils.border utils.border-gray-300 utils.rounded-lg utils.focus:ring-2 utils.focus:ring-primary-500 utils.focus:border-transparent utils.outline-none utils.transition-all utils.duration-200;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ===== Custom scrollbar ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
