@@ -42,19 +42,29 @@
 }
 
 /* ===== Custom scrollbar ===== */
+/* ===== Custom scrollbar ===== */
+/* Hide native scrollbars but keep scrolling functional
+   - WebKit browsers (Chrome, Safari, Edge) use ::-webkit-scrollbar
+   - Firefox uses scrollbar-width
+   - IE/older Edge use -ms-overflow-style
+*/
+
+/* Apply to the whole document */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+/* WebKit browsers */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 0;
+  height: 0;
 }
 
+/* Keep track/thumb transparent so nothing shows */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: transparent;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: transparent;
 }

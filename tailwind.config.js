@@ -3,12 +3,15 @@
 import colors from 'tailwindcss/colors'
 
 export default {
+  darkMode: ['class'],
   content: [
     './src/**/*.{js,jsx}',
+    './src/pages/**/*.{js,jsx}',
     './src/components/**/*.{js,jsx}',
     './src/app/**/*.{js,jsx}',
   ],
   theme: {
+    
     extend: {
       colors: {
         primary: {

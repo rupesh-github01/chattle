@@ -11,14 +11,14 @@ export default function Post() {
       className="relative group"
     >
       {/* Ambient glow effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 blur-2xl group-hover:blur-xl transition-all duration-700"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 dark:from-blue-600/5 dark:via-purple-600/5 dark:to-pink-600/5 blur-2xl group-hover:blur-xl transition-all duration-700"></div>
       
-      <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl shadow-purple-500/10 overflow-hidden border border-white/50 hover:border-purple-300/50 transition-all duration-500">
+      <div className="relative bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-3xl shadow-2xl shadow-purple-500/10 dark:shadow-purple-900/20 overflow-hidden border border-white/50 dark:border-slate-700/50 hover:border-purple-300/50 dark:hover:border-purple-600/50 transition-all duration-500">
         {/* Post Image with gradient overlay */}
-        <div className="relative h-96 bg-gradient-to-br from-blue-500 via-purple-600 to-pink-600 overflow-hidden">
+        <div className="relative h-96 bg-gradient-to-br from-blue-500 via-purple-600 to-pink-600 dark:from-blue-600 dark:via-purple-700 dark:to-pink-700 overflow-hidden">
           {/* Animated gradient orbs */}
-          <div className="absolute top-10 left-10 w-40 h-40 bg-white/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-10 right-10 w-40 h-40 bg-white/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-10 left-10 w-40 h-40 bg-white/20 dark:bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-40 h-40 bg-white/20 dark:bg-white/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
           
           <div className="absolute inset-0 flex items-center justify-center z-10">
             <div className="text-center text-white p-8">
@@ -50,10 +50,10 @@ export default function Post() {
 
         {/* Post Content */}
         <div className="p-8 md:p-10">
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent mb-6">
             Building Better Conversations
           </h2>
-          <div className="prose prose-lg max-w-none text-gray-700">
+          <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-300">
             <p className="mb-4 leading-relaxed">
               This is a demonstration of a fully functional nested commenting system. 
               The interface supports unlimited nesting levels, allowing for rich, 
@@ -64,23 +64,23 @@ export default function Post() {
             </p>
             <ul className="space-y-3 mb-6">
               <li className="flex items-start gap-3">
-                <span className="inline-block mt-1.5 w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex-shrink-0"></span>
+                <span className="inline-block mt-1.5 w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-400 dark:to-purple-400 flex-shrink-0"></span>
                 <span>Nested replies with visual hierarchy</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="inline-block mt-1.5 w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex-shrink-0"></span>
+                <span className="inline-block mt-1.5 w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 dark:from-purple-400 dark:to-pink-400 flex-shrink-0"></span>
                 <span>Upvote system to highlight valuable contributions</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="inline-block mt-1.5 w-2 h-2 rounded-full bg-gradient-to-r from-pink-500 to-blue-500 flex-shrink-0"></span>
+                <span className="inline-block mt-1.5 w-2 h-2 rounded-full bg-gradient-to-r from-pink-500 to-blue-500 dark:from-pink-400 dark:to-blue-400 flex-shrink-0"></span>
                 <span>Collapsible comment threads for better readability</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="inline-block mt-1.5 w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex-shrink-0"></span>
+                <span className="inline-block mt-1.5 w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-400 dark:to-purple-400 flex-shrink-0"></span>
                 <span>Responsive design that works on all devices</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="inline-block mt-1.5 w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex-shrink-0"></span>
+                <span className="inline-block mt-1.5 w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 dark:from-purple-400 dark:to-pink-400 flex-shrink-0"></span>
                 <span>Admin privileges for content moderation</span>
               </li>
             </ul>
@@ -92,25 +92,25 @@ export default function Post() {
           {/* Post Meta */}
           <div className="flex items-center justify-between mt-8 pt-8 border-t border-gradient relative">
             {/* Gradient border effect */}
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent"></div>
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-300 dark:via-purple-600 to-transparent"></div>
             
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center shadow-lg shadow-purple-500/30 ring-2 ring-white ring-offset-2">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 dark:from-blue-600 dark:via-purple-600 dark:to-pink-600 flex items-center justify-center shadow-lg shadow-purple-500/30 dark:shadow-purple-900/30 ring-2 ring-white dark:ring-slate-800 ring-offset-2 dark:ring-offset-slate-900">
                 <span className="text-white font-bold text-sm">IT</span>
               </div>
               <div>
-                <p className="font-semibold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                <p className="font-semibold bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
                   Inter IIT Team
                 </p>
-                <p className="text-sm text-gray-500">October 17, 2025</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">October 17, 2025</p>
               </div>
             </div>
             
             <div className="flex gap-4 text-sm">
-              <span className="px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-purple-50 text-gray-700 border border-purple-200/30 shadow-sm hover:shadow-md transition-all duration-300">
+              <span className="px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/50 dark:to-purple-950/50 text-gray-700 dark:text-gray-300 border border-purple-200/30 dark:border-purple-700/30 shadow-sm hover:shadow-md transition-all duration-300">
                 📖 5 min read
               </span>
-              <span className="px-4 py-2 rounded-full bg-gradient-to-r from-purple-50 to-pink-50 text-gray-700 border border-pink-200/30 shadow-sm hover:shadow-md transition-all duration-300">
+              <span className="px-4 py-2 rounded-full bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/50 dark:to-pink-950/50 text-gray-700 dark:text-gray-300 border border-pink-200/30 dark:border-pink-700/30 shadow-sm hover:shadow-md transition-all duration-300">
                 💬 Discussion
               </span>
             </div>

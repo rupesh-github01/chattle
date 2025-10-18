@@ -55,7 +55,7 @@ export default function CommentForm({ onCommentAdded, parentId, onCancel }) {
     >
       <div className="relative group">
         {/* Gradient border effect */}
-        <div className={`absolute -inset-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl blur opacity-20 ${isFocused ? 'opacity-40' : 'group-hover:opacity-30'} transition-all duration-500`}></div>
+        <div className={`absolute -inset-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 dark:from-blue-600 dark:via-purple-600 dark:to-pink-600 rounded-2xl blur opacity-20 ${isFocused ? 'opacity-40 dark:opacity-30' : 'group-hover:opacity-30 dark:group-hover:opacity-25'} transition-all duration-500`}></div>
         
         <textarea
           value={text}
@@ -63,7 +63,7 @@ export default function CommentForm({ onCommentAdded, parentId, onCancel }) {
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           placeholder={parentId ? "Write a thoughtful reply..." : "Share your thoughts..."}
-          className="relative w-full min-h-[120px] px-5 py-4 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-2xl focus:outline-none focus:border-transparent resize-none text-gray-700 placeholder-gray-400 transition-all duration-300 shadow-sm"
+          className="relative w-full min-h-[120px] px-5 py-4 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm border border-gray-200 dark:border-slate-600 rounded-2xl focus:outline-none focus:border-transparent resize-none text-gray-700 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 transition-all duration-300 shadow-sm"
           disabled={isSubmitting}
         />
       </div>
@@ -74,8 +74,8 @@ export default function CommentForm({ onCommentAdded, parentId, onCancel }) {
           disabled={isSubmitting || !text.trim()}
           className="relative px-6 py-2.5 rounded-xl font-medium text-white overflow-hidden transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 transition-all duration-300 group-hover:scale-105"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 dark:from-blue-600 dark:via-purple-600 dark:to-pink-600 transition-all duration-300"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-700 dark:via-purple-700 dark:to-pink-700 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
           <span className="relative flex items-center gap-2">
             {isSubmitting ? (
               <>
@@ -97,7 +97,7 @@ export default function CommentForm({ onCommentAdded, parentId, onCancel }) {
           <button
             type="button"
             onClick={onCancel}
-            className="px-6 py-2.5 rounded-xl font-medium bg-gradient-to-r from-gray-100 to-gray-50 text-gray-700 border border-gray-200 hover:from-gray-200 hover:to-gray-100 transition-all duration-300 hover:shadow-sm"
+            className="px-6 py-2.5 rounded-xl font-medium bg-gradient-to-r from-gray-100 to-gray-50 dark:from-slate-700 dark:to-slate-600 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-slate-600 hover:from-gray-200 hover:to-gray-100 dark:hover:from-slate-600 dark:hover:to-slate-500 transition-all duration-300 hover:shadow-sm"
           >
             Cancel
           </button>

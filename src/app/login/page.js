@@ -54,12 +54,12 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-purple-50/30 to-pink-50/30 px-4 relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-purple-50/30 to-pink-50/30 dark:from-slate-900 dark:via-purple-950/30 dark:to-pink-950/30 px-4 relative overflow-hidden transition-colors duration-500">
       {/* Ambient background effects */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-400/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400/20 dark:bg-blue-600/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-400/20 dark:bg-purple-600/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-400/20 dark:bg-pink-600/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
       </div>
 
       <motion.div
@@ -69,9 +69,9 @@ export default function LoginPage() {
         className="relative z-10 w-full max-w-md"
       >
         {/* Gradient glow around card */}
-        <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl blur-xl opacity-30"></div>
+        <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 dark:from-blue-600 dark:via-purple-600 dark:to-pink-600 rounded-3xl blur-xl opacity-30 dark:opacity-20"></div>
         
-        <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl shadow-purple-500/20 p-8 md:p-10 border border-white/50">
+        <div className="relative bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-3xl shadow-2xl shadow-purple-500/20 dark:shadow-purple-900/30 p-8 md:p-10 border border-white/50 dark:border-slate-700/50">
           {/* Logo/Brand */}
           <div className="text-center mb-8">
             <motion.div
@@ -81,17 +81,17 @@ export default function LoginPage() {
               className="inline-block mb-4"
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl blur-lg opacity-50"></div>
-                <div className="relative bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl p-4">
-                  <span className="text-1.5xl font-bold text-white">.Chattle</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 dark:from-blue-600 dark:via-purple-600 dark:to-pink-600 rounded-2xl blur-lg opacity-50"></div>
+                <div className="relative bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 dark:from-blue-600 dark:via-purple-600 dark:to-pink-600 rounded-2xl p-4">
+                  <span className="text-1.75xl font-bold text-white">.Chattle</span>
                 </div>
               </div>
             </motion.div>
             
-            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent mb-2">
               {isLogin ? 'Welcome Back' : 'Create Account'}
             </h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-400">
               {isLogin ? 'Sign in to continue your journey' : 'Join our vibrant community'}
             </p>
           </div>
@@ -102,8 +102,8 @@ export default function LoginPage() {
               animate={{ opacity: 1, y: 0 }}
               className="relative mb-6 group"
             >
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl blur opacity-20"></div>
-              <div className="relative bg-red-50/80 backdrop-blur-sm border border-red-200/50 text-red-700 px-4 py-3 rounded-2xl">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-red-500 to-pink-500 dark:from-red-600 dark:to-pink-600 rounded-2xl blur opacity-20 dark:opacity-15"></div>
+              <div className="relative bg-red-50/80 dark:bg-red-950/50 backdrop-blur-sm border border-red-200/50 dark:border-red-800/50 text-red-700 dark:text-red-400 px-4 py-3 rounded-2xl">
                 <span className="flex items-center gap-2">
                   <span className="text-lg"></span>
                   <span className="text-sm font-medium">{error}</span>
@@ -119,17 +119,17 @@ export default function LoginPage() {
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
               >
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                   Full Name
                 </label>
                 <div className="relative group">
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl blur opacity-0 group-focus-within:opacity-20 transition-all duration-300"></div>
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-600 dark:to-purple-600 rounded-xl blur opacity-0 group-focus-within:opacity-20 dark:group-focus-within:opacity-15 transition-all duration-300"></div>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="relative w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-purple-400 transition-all duration-300 text-gray-700"
+                    className="relative w-full px-4 py-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-xl focus:outline-none focus:border-purple-400 dark:focus:border-purple-500 transition-all duration-300 text-gray-700 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
                     placeholder="Enter your full name"
                     required
                   />
@@ -138,17 +138,17 @@ export default function LoginPage() {
             )}
 
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                 Email Address
               </label>
               <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl blur opacity-0 group-focus-within:opacity-20 transition-all duration-300"></div>
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-500 dark:from-purple-600 dark:to-pink-600 rounded-xl blur opacity-0 group-focus-within:opacity-20 dark:group-focus-within:opacity-15 transition-all duration-300"></div>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="relative w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-purple-400 transition-all duration-300 text-gray-700"
+                  className="relative w-full px-4 py-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-xl focus:outline-none focus:border-purple-400 dark:focus:border-purple-500 transition-all duration-300 text-gray-700 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
                   placeholder="Enter your email"
                   required
                 />
@@ -156,17 +156,17 @@ export default function LoginPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                 Password
               </label>
               <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-500 to-blue-500 rounded-xl blur opacity-0 group-focus-within:opacity-20 transition-all duration-300"></div>
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-500 to-blue-500 dark:from-pink-600 dark:to-blue-600 rounded-xl blur opacity-0 group-focus-within:opacity-20 dark:group-focus-within:opacity-15 transition-all duration-300"></div>
                 <input
                   type="password"
                   name="password"
                   value={formData.password}
                   onChange={handleChange}
-                  className="relative w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-purple-400 transition-all duration-300 text-gray-700"
+                  className="relative w-full px-4 py-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-xl focus:outline-none focus:border-purple-400 dark:focus:border-purple-500 transition-all duration-300 text-gray-700 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
                   placeholder="Enter your password"
                   required
                   minLength={6}
@@ -179,8 +179,8 @@ export default function LoginPage() {
               disabled={loading}
               className="relative w-full mt-6 group overflow-hidden rounded-xl"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-xl"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 dark:from-blue-600 dark:via-purple-600 dark:to-pink-600 rounded-xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-700 dark:via-purple-700 dark:to-pink-700 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-xl"></div>
               <span className="relative block py-3 px-6 text-white font-semibold">
                 {loading ? (
                   <span className="flex items-center justify-center gap-2">
@@ -208,29 +208,29 @@ export default function LoginPage() {
               }}
               className="relative group inline-block"
             >
-              <span className="text-gray-600 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-pink-600 group-hover:bg-clip-text transition-all duration-300 font-medium">
+              <span className="text-gray-600 dark:text-gray-400 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-pink-600 dark:group-hover:from-purple-400 dark:group-hover:to-pink-400 group-hover:bg-clip-text transition-all duration-300 font-medium">
                 {isLogin ? "Don't have an account? Sign up" : 'Already have an account? Sign in'}
               </span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-pink-600 group-hover:w-full transition-all duration-300"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 group-hover:w-full transition-all duration-300"></span>
             </button>
           </div>
 
           {/* Demo Credentials */}
           <div className="mt-8 pt-6 border-t relative">
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent"></div>
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-300 dark:via-purple-700 to-transparent"></div>
             
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-xl blur group-hover:from-blue-500/20 group-hover:via-purple-500/20 group-hover:to-pink-500/20 transition-all duration-300"></div>
-              <div className="relative bg-gradient-to-r from-blue-50/50 via-purple-50/50 to-pink-50/50 rounded-xl p-4 border border-purple-200/30">
-                <p className="text-sm font-semibold text-gray-700 text-center mb-2 flex items-center justify-center gap-2">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 dark:from-blue-600/5 dark:via-purple-600/5 dark:to-pink-600/5 rounded-xl blur group-hover:from-blue-500/20 group-hover:via-purple-500/20 group-hover:to-pink-500/20 dark:group-hover:from-blue-600/10 dark:group-hover:via-purple-600/10 dark:group-hover:to-pink-600/10 transition-all duration-300"></div>
+              <div className="relative bg-gradient-to-r from-blue-50/50 via-purple-50/50 to-pink-50/50 dark:from-blue-950/30 dark:via-purple-950/30 dark:to-pink-950/30 rounded-xl p-4 border border-purple-200/30 dark:border-purple-700/30">
+                <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 text-center mb-2 flex items-center justify-center gap-2">
                   <span></span>
                   Demo Credentials
                 </p>
                 <div className="space-y-1">
-                  <p className="text-xs text-gray-600 text-center font-mono">
+                  <p className="text-xs text-gray-600 dark:text-gray-400 text-center font-mono">
                     demo@example.com
                   </p>
-                  <p className="text-xs text-gray-600 text-center font-mono">
+                  <p className="text-xs text-gray-600 dark:text-gray-400 text-center font-mono">
                     demo123
                   </p>
                 </div>
