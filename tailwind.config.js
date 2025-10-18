@@ -4,7 +4,7 @@ import colors from 'tailwindcss/colors'
 
 export default {
   content: [
-    './src/pages/**/*.{js,jsx}',
+    './src/**/*.{js,jsx}',
     './src/components/**/*.{js,jsx}',
     './src/app/**/*.{js,jsx}',
   ],
@@ -23,6 +23,9 @@ export default {
           800: '#075985',
           900: '#0c4a6e',
         },
+      },
+      fontFamily : {
+        tangerine : ['Tangerine', 'cursive'],
       },
     },
   },
