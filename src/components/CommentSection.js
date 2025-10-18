@@ -69,7 +69,10 @@ export default function CommentSection({ user }) {
   if (loading) {
     return (
       <div className="flex justify-center py-12">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
+        <div className="relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-xl opacity-30"></div>
+          <div className="relative animate-spin rounded-full h-12 w-12 border-4 border-transparent border-t-blue-500 border-r-purple-500 border-b-pink-500"></div>
+        </div>
       </div>
     )
   }
@@ -79,46 +82,66 @@ export default function CommentSection({ user }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.2 }}
-      className="bg-white rounded-2xl shadow-lg p-8"
+      className="relative group"
     >
-      {/* Header */}
-      <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-200">
-        <h3 className="text-2xl font-bold text-gray-800">
-          Comments ({comments.length})
-        </h3>
-        <SortDropdown sortBy={sortBy} setSortBy={setSortBy} />
-      </div>
+      {/* Ambient glow */}
+      <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10 blur-2xl group-hover:blur-xl transition-all duration-700"></div>
+      
+      <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl shadow-pink-500/10 p-8 md:p-10 border border-white/50 hover:border-pink-300/50 transition-all duration-500">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-8 pb-6 border-b border-gradient relative">
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent"></div>
+          
+          <div>
+            <h3 className="text-3xl font-bold bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
+              Comments
+            </h3>
+            <p className="text-sm text-gray-500 mt-1">
+              {comments.length} {comments.length === 1 ? 'conversation' : 'conversations'}
+            </p>
+          </div>
+          
+          <SortDropdown sortBy={sortBy} setSortBy={setSortBy} />
+        </div>
 
-      {/* Comment Form */}
-      <CommentForm
-        onCommentAdded={handleCommentAdded}
-        parentId={null}
-      />
+        {/* Comment Form */}
+        <div className="mb-8">
+          <CommentForm
+            onCommentAdded={handleCommentAdded}
+            parentId={null}
+          />
+        </div>
 
-      {/* Comments List */}
-      <div className="mt-8 space-y-6">
-        <AnimatePresence>
-          {sortedComments.length > 0 ? (
-            sortedComments.map((comment) => (
-              <Comment
-                key={comment.id}
-                comment={comment}
-                user={user}
-                onCommentAdded={handleCommentAdded}
-                onCommentDeleted={handleCommentDeleted}
-                onUpvote={handleUpvote}
-              />
-            ))
-          ) : (
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center text-gray-500 py-8"
-            >
-              No comments yet. Be the first to share your thoughts!
-            </motion.p>
-          )}
-        </AnimatePresence>
+        {/* Comments List */}
+        <div className="space-y-6">
+          <AnimatePresence>
+            {sortedComments.length > 0 ? (
+              sortedComments.map((comment) => (
+                <Comment
+                  key={comment.id}
+                  comment={comment}
+                  user={user}
+                  onCommentAdded={handleCommentAdded}
+                  onCommentDeleted={handleCommentDeleted}
+                  onUpvote={handleUpvote}
+                />
+              ))
+            ) : (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="text-center py-16"
+              >
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 mb-4">
+                  <span className="text-4xl">💬</span>
+                </div>
+                <p className="text-gray-500 text-lg">
+                  No comments yet. Be the first to share your thoughts!
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </motion.section>
   )

@@ -7,25 +7,28 @@ export default function SortDropdown({ sortBy, setSortBy }) {
   const [isOpen, setIsOpen] = useState(false)
 
   const options = [
-    { value: 'newest', label: 'Newest First' },
-    { value: 'oldest', label: 'Oldest First' },
-    { value: 'most_upvoted', label: 'Most Upvoted' },
-    { value: 'most_replies', label: 'Most Replies' }
+    { value: 'newest', label: 'Newest First', icon: '' },
+    { value: 'oldest', label: 'Oldest First', icon: '' },
+    { value: 'most_upvoted', label: 'Most Upvoted', icon: '' },
+    { value: 'most_replies', label: 'Most Replies', icon: '' }
   ]
 
-  const currentLabel = options.find(opt => opt.value === sortBy)?.label
+  const currentOption = options.find(opt => opt.value === sortBy)
 
   return (
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+        className="group relative flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-50 to-pink-50 hover:from-purple-100 hover:to-pink-100 rounded-xl transition-all duration-300 border border-purple-200/30 shadow-sm hover:shadow-md"
       >
-        <span className="text-sm font-medium text-gray-700">
-          Sort: {currentLabel}
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/5 group-hover:to-pink-500/5 rounded-xl transition-all duration-300"></div>
+        
+        <span className="relative text-lg">{currentOption?.icon}</span>
+        <span className="relative text-sm font-medium text-gray-700">
+          {currentOption?.label}
         </span>
         <svg
-          className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+          className={`relative w-4 h-4 text-gray-600 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -42,25 +45,49 @@ export default function SortDropdown({ sortBy, setSortBy }) {
               onClick={() => setIsOpen(false)}
             />
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden z-20"
+              initial={{ opacity: 0, y: -10, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -10, scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+              className="absolute right-0 mt-2 w-56 z-20"
             >
-              {options.map((option) => (
-                <button
-                  key={option.value}
-                  onClick={() => {
-                    setSortBy(option.value)
-                    setIsOpen(false)
-                  }}
-                  className={`w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors ${
-                    sortBy === option.value ? 'bg-primary-50 text-primary-700 font-medium' : 'text-gray-700'
-                  }`}
-                >
-                  {option.label}
-                </button>
-              ))}
+              {/* Gradient glow */}
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 rounded-2xl blur opacity-20"></div>
+              
+              <div className="relative bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/50 overflow-hidden">
+                {options.map((option, index) => (
+                  <button
+                    key={option.value}
+                    onClick={() => {
+                      setSortBy(option.value)
+                      setIsOpen(false)
+                    }}
+                    className={`group w-full text-left px-5 py-3.5 transition-all duration-300 flex items-center gap-3 ${
+                      sortBy === option.value 
+                        ? 'bg-gradient-to-r from-purple-50 to-pink-50 border-l-4 border-purple-500' 
+                        : 'hover:bg-gradient-to-r hover:from-gray-50 hover:to-purple-50/30'
+                    } ${index !== options.length - 1 ? 'border-b border-gray-100' : ''}`}
+                  >
+                    <span className="text-xl">{option.icon}</span>
+                    <span className={`text-sm font-medium transition-all ${
+                      sortBy === option.value 
+                        ? 'bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent' 
+                        : 'text-gray-700 group-hover:text-gray-900'
+                    }`}>
+                      {option.label}
+                    </span>
+                    {sortBy === option.value && (
+                      <motion.span
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        className="ml-auto text-purple-600"
+                      >
+                        ✓
+                      </motion.span>
+                    )}
+                  </button>
+                ))}
+              </div>
             </motion.div>
           </>
         )}
