@@ -148,7 +148,7 @@ export default function Home(){
               <span className="inline-block w-0.5 h-10 md:h-12 bg-gradient-to-b from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 ml-1 animate-pulse"></span>
             </h2>
             <p className="text-center text-gray-600 dark:text-gray-400 mt-4 text-lg font-light">
-              We're thrilled to have you here
+              We&apos;re thrilled to have you here
             </p>
             <div className="flex items-center justify-center mt-6">
               <div className="h-1 w-20 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 dark:from-pink-400 dark:via-purple-400 dark:to-blue-400 rounded-full shadow-sm shadow-pink-500/30"></div>
