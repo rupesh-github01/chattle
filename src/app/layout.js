@@ -9,6 +9,9 @@ const inter = Inter({
 export const metadata = {
   title: 'Chattle - Nested Comments System',
   description: 'A modern nested commenting system with authentication',
+  icons: {
+    icon: "/favicon.png", // or "/favicon.png"
+  },
 }
 
 export default function RootLayout({ children }) {
