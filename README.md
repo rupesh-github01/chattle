@@ -4,7 +4,7 @@ A modern, fully-functional nested commenting system built with Next.js, MongoDB,
 
 ## Features
 
-✨ **Core Features**
+**Core Features**
 - Nested comment threads with unlimited depth
 - Visual hierarchy with indentation
 - Upvote system for comments
@@ -12,12 +12,12 @@ A modern, fully-functional nested commenting system built with Next.js, MongoDB,
 - Sort comments (newest, oldest, most upvoted, most replies)
 - Responsive design (mobile, tablet, desktop)
 
-🔐 **Authentication**
+**Authentication**
 - User registration and login
 - JWT-based authentication
 - Admin privileges for content moderation
 
-🎨 **UI/UX**
+**UI/UX**
 - Modern, clean interface
 - Smooth animations with Framer Motion
 - Real-time updates
@@ -142,16 +142,16 @@ docker-compose up -d
 
 ## Features Implemented
 
-✅ Nested comment structure
-✅ Authentication system
-✅ Upvote functionality
-✅ Collapse/expand threads
-✅ Sort comments
-✅ Admin privileges
-✅ Responsive design
-✅ Smooth animations
-✅ Docker support
-✅ RESTful API
+Nested comment structure
+Authentication system
+Upvote functionality
+Collapse/expand threads
+Sort comments
+Admin privileges
+Responsive design
+Smooth animations
+Docker support
+RESTful API
 
 ## Development
 
@@ -229,10 +229,6 @@ Deeply nested conversations with visual hierarchy.
 
 MIT License - feel free to use this project for learning or production.
 
-## Contact
-
-For questions or support, email: dev.interiittech14.0@gmail.com
-
 ## Acknowledgments
 
 - Inter IIT Tech Meet 14.0
@@ -243,4 +239,4 @@ For questions or support, email: dev.interiittech14.0@gmail.com
 
 ---
 
-Built with ❤️ for Inter IIT Tech Meet 14.0
+Built Inter IIT Tech Meet 14.0 Selections
